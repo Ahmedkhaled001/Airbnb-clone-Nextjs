@@ -6,7 +6,7 @@ import { UserIcon } from "@heroicons/react/solid";
 import { DateRangePicker, RangeKeyDict } from "react-date-range"
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import path from "path";
+
 
 const Searchbar = ({ placeholder }: { placeholder?: string }) => {
   const [input, setInput] = useState("");
@@ -29,7 +29,8 @@ const Searchbar = ({ placeholder }: { placeholder?: string }) => {
         <div className="flex items-center md:border-2 rounded-full py-2 shadow-sm p-2">
           <input
             type="text"
-            placeholder={placeholder || 'Start your search'}
+            style={{width: '-webkit-fill-available', textOverflow: 'ellipsis'}}
+            placeholder={placeholder || 'Search destinations'}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="text-xs md:text-sm text-gray-600 placeholder-gray-400 flex-grow md:pl-5 bg-transparent outline-none ml-1"
